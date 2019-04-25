@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         EditText etZaehler = findViewById(R.id.zaehler);
         EditText etNenner = findViewById(R.id.nenner);
-        int z = Integer.parseInt(etZaehler.getText().toString());
-        int n = Integer.parseInt(etNenner.getText().toString());
+        String sz = etZaehler.getText().toString();
+        String sn = etNenner.getText().toString();
+        if (sz.length() == 0 || sn.length() == 0) return;
+        int z = Integer.parseInt(sz);
+        int n = Integer.parseInt(sn);
         if (z*n != 0) {
             int rest;
             int ggt = Math.abs(z);
